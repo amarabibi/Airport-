@@ -1,8 +1,8 @@
 import React from "react";
 import "./about.css";
 import airportBuildingImage from "../assets/airplane-taking-off-sunset.jpg";
-import terminalImage from "../assets/istockphoto-497417426-612x612.jpg";
-import runwayImage from "../assets/photo-1553369728-15ec6971afaf.jpg";
+import terminalImage from "../assets/terminals.jpg";
+import runwayImage from "../assets/9Tzi8ywRz924XE3uHaD6DfGZQfjEdZd7oKlsiR53VLHvSZExpMzuRmKdwHbkL9Pk5qfDe2LcfxLU4NTqpuq3uC+B+08WMXyY6I3q7dJydzPyflNOhR1DMRhgRnlguY_ujYndRleyIyYyUHnsEIUYHLXAp7_S7Ho8sDAF6nD6dCnXNd0neBWO2ps6icCfPIUe.webp";
 
 export default function About() {
   return (
@@ -43,15 +43,6 @@ export default function About() {
 
       {/* Mission & Vision */}
       <div className="mission-vision-section">
-        <div className="mv-card">
-          <div className="mv-icon">🎯</div>
-          <h3 className="mv-title">Our Mission</h3>
-          <p className="mv-text">
-            To provide safe, efficient, and customer-centric aviation services
-            while fostering economic development and connecting communities
-            through world-class air transportation infrastructure.
-          </p>
-        </div>
         <div className="mv-card">
           <div className="mv-icon">👁️</div>
           <h3 className="mv-title">Our Vision</h3>
@@ -120,15 +111,17 @@ export default function About() {
             title="Terminal Building"
             description="Modern and spacious terminal facilities"
           />
-          <GalleryItem
-            image={runwayImage}
-            title="Runway Infrastructure"
-            description="CAT-III compliant runway system"
-          />
+
           <GalleryItem
             image={airportBuildingImage}
             title="Airport Exterior"
             description="Iconic architecture and design"
+          />
+
+          <GalleryItem
+            image={runwayImage}
+            title="Runway Infrastructure"
+            description="CAT-III compliant runway system"
           />
         </div>
       </div>
@@ -179,7 +172,7 @@ export default function About() {
             title="Address"
             info="Airport Road, Narowal, Punjab, Pakistan"
           />
-          <ContactInfo icon="📞" title="Phone" info="+92-xxx-xxxxxxx" />
+          <ContactInfo icon="📞" title="Phone" info="+92-0340-4368654" />
           <ContactInfo icon="📧" title="Email" info="info@narowalair.com" />
           <ContactInfo
             icon="🕐"
