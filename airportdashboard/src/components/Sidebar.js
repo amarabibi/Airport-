@@ -21,18 +21,21 @@ export default function Sidebar({ activePage, setActivePage }) {
           onClick={() => setActivePage("home")}
           active={activePage === "home"}
         />
-        <MenuItem
-          icon={<Plane size={20} />}
-          text="Services & Facilities"
-          onClick={() => setActivePage("services")}
-          active={activePage === "services"}
-        />
+
         <MenuItem
           icon={<Info size={20} />}
           text="Flights Info"
           onClick={() => setActivePage("flight")}
           active={activePage === "flight"}
         />
+
+        <MenuItem
+          icon={<Plane size={20} />}
+          text="Services & Facilities"
+          onClick={() => setActivePage("services")}
+          active={activePage === "services"}
+        />
+
         <MenuItem
           icon={<Info size={20} />}
           text="Procedures"

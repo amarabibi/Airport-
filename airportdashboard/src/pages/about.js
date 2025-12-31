@@ -44,6 +44,15 @@ export default function About() {
       {/* Mission & Vision */}
       <div className="mission-vision-section">
         <div className="mv-card">
+          <div className="mv-icon">🎯</div>
+          <h3 className="mv-title">Our Mission</h3>
+          <p className="mv-text">
+            To provide safe, efficient, and customer-centric aviation services
+            while fostering economic development and connecting communities
+            through world-class air transportation infrastructure.
+          </p>
+        </div>
+        <div className="mv-card">
           <div className="mv-icon">👁️</div>
           <h3 className="mv-title">Our Vision</h3>
           <p className="mv-text">
