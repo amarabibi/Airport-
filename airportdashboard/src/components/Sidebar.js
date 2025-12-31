@@ -8,7 +8,7 @@ import {
   LogOut,
 } from "lucide-react";
 import "./comp-css.css";
-import logo from "../assets/dinning.jpg";
+import logo from "../assets/airport-logo.png";
 
 export default function Sidebar({ activePage, setActivePage }) {
   return (

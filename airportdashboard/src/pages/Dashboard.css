@@ -1,24 +1,75 @@
+/* ================= ROOT DASHBOARD ================= */
 .dashboard {
   flex: 1;
   background-color: #fafafa;
-  color: rgb(6, 6, 6);
+  color: #060606;
   padding: 2rem;
   margin-left: 16rem;
-  /* Same as sidebar width */
+  /* sidebar width */
 }
 
+/* ================= TITLE ================= */
 .dashboard-title {
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
-/* Stats Grid */
+/* ================= HERO IMAGE ================= */
+.airport-image-container {
+  position: relative;
+  margin-bottom: 3.5rem;
+  /* FIX spacing */
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.airport-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+  to top,
+  rgba(0, 0, 0, 0.85),
+  rgba(0, 0, 0, 0.4),
+  transparent
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.overlay-content {
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.overlay-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #22c55e;
+  margin-bottom: 0.75rem;
+}
+
+.overlay-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* ================= STATS ================= */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.8rem;
+  margin-bottom: 4rem;
+  /* 🔥 MAIN FIX */
 }
 
 @media (min-width:768px) {
@@ -28,199 +79,107 @@
 }
 
 .stat-card {
-  background-color: rgb(248, 248, 248);
-  border: 1px solid #1f2937;
+  background-color: #ffffff;
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 1.6rem;
   border: 2px solid #22c55e;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+}
+
+.stat-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .stat-title {
-  color: #050505;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  color: #374151;
 }
 
 .stat-value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 0.5rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
 }
 
-/* Flights Table */
+/* ================= FLIGHTS TABLE ================= */
 .flights-container {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 0.75rem;
-  padding: 1.5rem;
-  border: 1px solid #1f2937;
+  padding: 2rem;
+  margin-top: 1rem;
   border: 2px solid #22c55e;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.35);
 }
 
 .flights-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .flights-table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.flights-table th {
   text-align: left;
-  color: #050505;
-}
-
-.table-header-row {
-  border-bottom: 1px solid #374151;
-}
-
-.table-header {
-  padding: 0.5rem 0;
-}
-
-.flight-row {
-  border-bottom: 1px solid #1f2937;
-}
-
-.flight-cell {
-  padding: 0.75rem 0;
-}
-
-.status-cell {
-  color: #4ade80;
-}
-
-.airport-image-container {
-  margin-bottom: 2rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-}
-
-.airport-image {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-  display: block;
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: 2rem;
-}
-
-.overlay-content {
-  color: white;
-  max-width: 600px;
-}
-
-.overlay-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  color: #22c55e;
-}
-
-.overlay-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #e5e7eb;
-}
-
-.info-section {
-  margin-top: 2.5rem;
-}
-
-.info-section-title {
-  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e5e7eb;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  color: #111827;
 }
 
-.info-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.flights-table td {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
 }
 
-@media (min-width:768px) {
-  .info-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.info-card {
-  background-color: rgb(250, 250, 250);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
-  transition: all 0.3s;
-}
-
-.info-card:hover {
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
-  transform: translateY(-2px);
-}
-
-.info-card-title {
-  font-size: 1.125rem;
+.flight-number {
   font-weight: 600;
-  color: #22c55e;
-  margin-bottom: 0.75rem;
 }
 
-.info-card-content {
-  color: #d1d5db;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
+/* ================= STATUS COLORS ================= */
 .status-ontime {
-  color: #4ade80;
+  color: #16a34a;
+  font-weight: 600;
 }
 
 .status-delayed {
-  color: #ef4444;
+  color: #dc2626;
+  font-weight: 600;
 }
 
 .status-boarding {
-  color: #fbbf24;
+  color: #f59e0b;
+  font-weight: 600;
 }
 
-.airport-image-container {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.airport-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-  max-height: 400px;
-  object-fit: cover;
-}
-
+/* ================= INFO SECTION ================= */
 .info-section {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 .info-section-title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* ================= INFO CARDS ================= */
 .info-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width:768px) {
@@ -230,21 +189,21 @@
 }
 
 .info-card {
-  background-color: rgb(248, 247, 247);
+  background-color: #ffffff;
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
-  transition: all 0.3s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .info-card:hover {
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
 }
 
 .info-card-image-container {
   width: 100%;
-  height: 250px;
+  height: 240px;
   overflow: hidden;
 }
 
@@ -252,7 +211,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .info-card:hover .info-card-image {
@@ -260,40 +219,28 @@
 }
 
 .info-card-body {
-  padding: 1.5rem;
+  padding: 1.6rem;
 }
 
 .info-card-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
 }
 
 .info-card-icon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .info-card-title {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #22c55e;
 }
 
 .info-card-content {
-  color: #020202;
   font-size: 0.95rem;
   line-height: 1.6;
-}
-
-.status-ontime {
-  color: #4ade80;
-}
-
-.status-delayed {
-  color: #ef4444;
-}
-
-.status-boarding {
-  color: #fbbf24;
+  color: #374151;
 }
