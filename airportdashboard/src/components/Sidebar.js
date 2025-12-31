@@ -8,11 +8,15 @@ import {
   LogOut,
 } from "lucide-react";
 import "./comp-css.css";
+import logo from "../assets/dinning.jpg";
 
 export default function Sidebar({ activePage, setActivePage }) {
   return (
     <aside className="sidebar">
-      <div className="sidebar-header">✈ Airport Admin</div>
+      <div className="sidebar-header">
+        <img src={logo} alt="Airport Logo" className="sidebar-logo" />
+        <span>Airport Admin</span>
+      </div>
 
       <nav className="sidebar-nav">
         <MenuItem
@@ -21,38 +25,33 @@ export default function Sidebar({ activePage, setActivePage }) {
           onClick={() => setActivePage("home")}
           active={activePage === "home"}
         />
-
-        <MenuItem
-          icon={<Info size={20} />}
-          text="Flights Info"
-          onClick={() => setActivePage("flight")}
-          active={activePage === "flight"}
-        />
-
         <MenuItem
           icon={<Plane size={20} />}
           text="Services & Facilities"
           onClick={() => setActivePage("services")}
           active={activePage === "services"}
         />
-
         <MenuItem
           icon={<Info size={20} />}
+          text="Flights Info"
+          onClick={() => setActivePage("flights")}
+          active={activePage === "flights"}
+        />
+        <MenuItem
+          icon={<ClipboardList size={20} />}
           text="Procedures"
           onClick={() => setActivePage("procedures")}
           active={activePage === "procedures"}
         />
-
         <MenuItem
-          icon={<Info size={20} />}
-          text="E-complaints"
-          onClick={() => setActivePage("e-complaints")}
-          active={activePage === "e-complaints"}
+          icon={<MessageSquare size={20} />}
+          text="E-Complaints"
+          onClick={() => setActivePage("complaints")}
+          active={activePage === "complaints"}
         />
-
         <MenuItem
-          icon={<Info size={20} />}
-          text="About Us"
+          icon={<Users size={20} />}
+          text="About"
           onClick={() => setActivePage("about")}
           active={activePage === "about"}
         />
