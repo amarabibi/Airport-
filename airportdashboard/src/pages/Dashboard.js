@@ -1,10 +1,11 @@
 import React from "react";
 import "./Dashboard.css";
 import airportImage from "../assets/green-plane-ecofriendly-environment.jpg";
-import checkInimage from "../assets/photo-1553369728-15ec6971afaf.jpg";
-import Transit from "../assets/The-Importance-of-Proper-Signage-in-Airports-and-Transit-Centers-1.png.webp";
-import security from "../assets/airport-security-1600x1066.jpeg";
-import luggage from "../assets/tourist-carrying-luggage.jpg";
+import checkInimage from "../assets/check-in.jpg";
+import transit from "../assets/transit.webp";
+import security from "../assets/security.jpeg";
+import luggage from "../assets/luggage.jpg";
+
 export default function Dashboard() {
   return (
     <div className="dashboard">
@@ -26,14 +27,14 @@ export default function Dashboard() {
 
       {/* Stats */}
       <div className="stats-grid">
-        <StatCard title="Total Flights" value="128" />
-        <StatCard title="Passengers Today" value="4,560" />
-        <StatCard title="Delayed Flights" value="7" />
+        <StatCard title="Total Flights" value="128" icon="✈️" />
+        <StatCard title="Passengers Today" value="4,560" icon="👥" />
+        <StatCard title="Delayed Flights" value="7" icon="⏰" />
       </div>
 
       {/* Departures Table */}
       <div className="flights-container">
-        <h2 className="flights-title">Departures</h2>
+        <h2 className="flights-title">Live Departures</h2>
 
         <table className="flights-table">
           <thead>
@@ -94,26 +95,30 @@ export default function Dashboard() {
 
       {/* Flight Information Cards */}
       <div className="info-section">
-        <h2 className="info-section-title">Flight Information</h2>
+        <h2 className="info-section-title">Passenger Information</h2>
         <div className="info-cards-grid">
           <InfoCard
             title="Check-in Information"
             image={checkInimage}
+            icon="✓"
             content="Check-in counters open 3 hours before departure. Online check-in available 24 hours prior to flight."
           />
           <InfoCard
             title="Baggage Allowance"
             image={luggage}
+            icon="🧳"
             content="Economy: 23kg, Business: 32kg. Carry-on: 7kg maximum. Additional fees apply for excess baggage."
           />
           <InfoCard
             title="Security Guidelines"
             image={security}
+            icon="🔒"
             content="Arrive 3 hours early for international flights. Liquids limited to 100ml containers in clear bags."
           />
           <InfoCard
             title="Transit Information"
-            image={Transit}
+            image={transit}
+            icon="🔄"
             content="Transit passengers should follow signs to connecting flights. Minimum connection time: 90 minutes."
           />
         </div>
@@ -122,9 +127,10 @@ export default function Dashboard() {
   );
 }
 
-function StatCard({ title, value }) {
+function StatCard({ title, value, icon }) {
   return (
     <div className="stat-card">
+      <div className="stat-icon">{icon}</div>
       <p className="stat-title">{title}</p>
       <h3 className="stat-value">{value}</h3>
     </div>
@@ -140,11 +146,13 @@ function FlightRow({ flight, destination, time, gate, status }) {
 
   return (
     <tr className="flight-row">
-      <td className="flight-cell">{flight}</td>
+      <td className="flight-cell flight-number">{flight}</td>
       <td className="flight-cell">{destination}</td>
       <td className="flight-cell">{time}</td>
       <td className="flight-cell">{gate}</td>
-      <td className={`flight-cell ${getStatusClass(status)}`}>{status}</td>
+      <td className={`flight-cell ${getStatusClass(status)}`}>
+        <span className="status-badge">{status}</span>
+      </td>
     </tr>
   );
 }
