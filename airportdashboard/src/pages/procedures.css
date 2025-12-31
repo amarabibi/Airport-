@@ -1,0 +1,248 @@
+.procedures-page {
+  flex: 1;
+  background-color: white;
+  color: #1f2937;
+  padding: 2rem;
+  margin-left: 16rem;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #22c55e;
+}
+
+.page-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+.quick-guide-section {
+  margin-bottom: 3rem;
+}
+
+.guide-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width:768px) {
+  .guide-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:1024px) {
+  .guide-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.quick-guide-card {
+  background-color: white;
+  border: 2px solid #22c55e;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+  transition: all 0.3s;
+}
+
+.quick-guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: #22c55e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.guide-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.guide-time {
+  color: #22c55e;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.guide-description {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.procedures-section {
+  margin-bottom: 3rem;
+}
+
+.procedure-accordion {
+  margin-bottom: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.procedure-accordion:hover {
+  border-color: #22c55e;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  transition: all 0.3s;
+}
+
+.accordion-header:hover {
+  background-color: #f9fafb;
+}
+
+.accordion-header.expanded {
+  background-color: #22c55e;
+  color: white;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-top: 2px solid #e5e7eb;
+}
+
+.procedure-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.procedure-content h3:first-child {
+  margin-top: 0;
+}
+
+.procedure-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.procedure-content li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #4b5563;
+}
+
+.procedure-content li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.important-note {
+  background-color: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  color: #92400e;
+}
+
+.important-note strong {
+  color: #78350f;
+}
+
+.help-section {
+  margin-top: 3rem;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width:768px) {
+  .contact-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-card {
+  background-color: white;
+  border: 2px solid #22c55e;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+  transition: all 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  color: #22c55e;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contact-available {
+  color: #6b7280;
+  font-size: 0.9rem;
+}

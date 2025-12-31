@@ -1,30 +1,74 @@
-import { Home, Plane, Users, Settings, LogOut } from "lucide-react";
+import {
+  Home,
+  Plane,
+  Info,
+  ClipboardList,
+  MessageSquare,
+  Users,
+  LogOut,
+} from "lucide-react";
+import "./comp-css.css";
 
-export default function Sidebar() {
+export default function Sidebar({ activePage, setActivePage }) {
   return (
-    <aside className="w-64 h-screen bg-black text-gray-300 flex flex-col">
-      <div className="p-6 text-xl font-bold text-white border-b border-gray-800">
-        ✈ Airport Admin
-      </div>
+    <aside className="sidebar">
+      <div className="sidebar-header">✈ Airport Admin</div>
 
-      <nav className="flex-1 px-4 py-6 space-y-3">
-        <MenuItem icon={<Home size={20} />} text="Dashboard" />
-        <MenuItem icon={<Plane size={20} />} text="Flights" />
-        <MenuItem icon={<Users size={20} />} text="Passengers" />
-        <MenuItem icon={<Settings size={20} />} text="Settings" />
+      <nav className="sidebar-nav">
+        <MenuItem
+          icon={<Home size={20} />}
+          text="Home"
+          onClick={() => setActivePage("home")}
+          active={activePage === "home"}
+        />
+        <MenuItem
+          icon={<Plane size={20} />}
+          text="Services & Facilities"
+          onClick={() => setActivePage("services")}
+          active={activePage === "services"}
+        />
+        <MenuItem
+          icon={<Info size={20} />}
+          text="Flights Info"
+          onClick={() => setActivePage("flight")}
+          active={activePage === "flight"}
+        />
+        <MenuItem
+          icon={<Info size={20} />}
+          text="Procedures"
+          onClick={() => setActivePage("procedures")}
+          active={activePage === "procedures"}
+        />
+
+        <MenuItem
+          icon={<Info size={20} />}
+          text="E-complaints"
+          onClick={() => setActivePage("e-complaints")}
+          active={activePage === "e-complaints"}
+        />
+
+        <MenuItem
+          icon={<Info size={20} />}
+          text="About Us"
+          onClick={() => setActivePage("about")}
+          active={activePage === "about"}
+        />
       </nav>
 
-      <div className="p-4 border-t border-gray-800">
+      <div className="sidebar-footer">
         <MenuItem icon={<LogOut size={20} />} text="Logout" />
       </div>
     </aside>
   );
 }
 
-function MenuItem({ icon, text }) {
+function MenuItem({ icon, text, onClick, active }) {
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-gray-800 hover:text-white transition">
-      {icon}
+    <div
+      className={`menu-item ${active ? "menu-item-active" : ""}`}
+      onClick={onClick}
+    >
+      <span className="menu-icon">{icon}</span>
       <span>{text}</span>
     </div>
   );
